@@ -1,0 +1,70 @@
+
+
+h1{
+    color: rgb(223, 151, 7);
+    border: thin solid red;
+    background-color: black;
+    text-align: center;
+    font-size: 60px;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Recursive', sans-serif;
+}
+.demoReel{
+   
+}
+.showReelPage{
+    background-color: black;
+}
+
+.frontPage{
+    background-color: rgb(1, 4, 7);
+}
+li{
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Recursive', sans-serif;
+    font-size: 32px;
+    
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#aboutH1{
+    color: white;
+    text-align: center;
+}
+.aboutMe{
+    background-color: #01010a;
+}
+   
+.leftAlign{ 
+    text-align: left;
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Recursive', sans-serif;
+    font-size: 32px;
+    
+
+}
+h2{
+    text-decoration: underline;
+   text-align: center;
+   font-size: 37px;
+    color: rgb(135, 146, 161);
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Recursive', sans-serif;
+
+}
+div{
+    border: thin solid white;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+html *{
+    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Recursive', sans-serif;
+    
+}

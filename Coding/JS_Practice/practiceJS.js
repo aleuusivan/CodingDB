@@ -133,7 +133,7 @@ TenOfDiamonds,
     stayButton.disabled = true
 
       function startGame() {
-        let total  = 0
+        let total = 0
         count++;
         if(count== 1){
 
@@ -142,20 +142,20 @@ TenOfDiamonds,
         startButton.style.display = 'none';
 
         // Dealer's First Card://
-        dealerCardOne = Math.floor(Math.random()*52 + 1)
+        let dealerCardOne = Math.floor(Math.random()*52 + 1)
         var  image1 = document.getElementById('card7');
         image1.src = deckOfCards[dealerCardOne].face
 
 
-        /* dealerCardOne = Math.floor(Math.random()*52 + 1)
+        /* 
         document.querySelector('#card7').innerText = (deckOfCards[dealerCardOne].face ) */
 
 
         //////Your first two cards//////////
-            const card1 = Math.floor(Math.random()*52 + 1)
+            let card1 = Math.floor(Math.random()*52 + 1)
             var  image2 = document.getElementById('card1');
             image2.src = deckOfCards[card1].face
-            const card2 = Math.floor(Math.random()*52 + 1 )
+            let card2 = Math.floor(Math.random()*52 + 1 )
             var  image3 = document.getElementById('card2');
             image3.src = deckOfCards[card2].face
 
@@ -163,7 +163,10 @@ TenOfDiamonds,
             document.querySelector('#score').innerText = ( total+=deckOfCards[card1].numValue )
             
             /* document.querySelector ('#card2').innerText =(deckOfCards[card2].face) */
+           
+           
             document.querySelector('#score').innerText = ( total+=deckOfCards[card2].numValue )
+            /////Hide the start button after being pressed/////
             startButton.classList.add('hidden')
         }
         
@@ -188,30 +191,39 @@ function hitMe() {
     
     click++;
     if(click == 1){
-       const card3 = Math.floor(Math.random()*50 + 1)
-        document.querySelector('#card3').innerText=(deckOfCards[card3].face)
+       let card3 = Math.floor(Math.random()*50 + 1)
+       var  image4 = document.getElementById('card3');
+       image4.src = deckOfCards[card3].face
+       /*  document.querySelector('#card3').innerText=(deckOfCards[card3].face) */
         document.querySelector('#score').innerText = ( total+=deckOfCards[card3].numValue )
         
     }
     else if(click == 2){
-        const card4 = Math.floor(Math.random()*50 + 1)
-        document.querySelector('#card4').innerText=(deckOfCards[card4].face)
+        let card4 = Math.floor(Math.random()*50 + 1)
+        var image5 = document.getElementById('card4');
+        image5.src = deckOfCards[card4].face
+       /*  document.querySelector('#card4').innerText=(deckOfCards[card4].face) */
         document.querySelector('#score').innerText = ( total+=deckOfCards[card4].numValue )
         
 
     }else if (click == 3){
-        const card5 = Math.floor(Math.random()*50 + 1)
-        document.querySelector('#card5').innerText=(deckOfCards[card5].face)
-        document.querySelector('#score').innerText = ( total+=deckOfCards[card5].numValue )
+        let card5 = Math.floor(Math.random()*50 + 1)
+        var image6 = document.getElementById('card5');
+        image6.src = deckOfCards[card5].face
+        /* document.querySelector('#card5').innerText=(deckOfCards[card5].face) */
+        document.getElementById('#score').innerText = ( total+=deckOfCards[card5].numValue )
     
     }else if (click == 4){
-        const card6 = Math.floor(Math.random()*50 + 1)
-        document.querySelector('#card6').innerText=(deckOfCards[card6].face)
+        let card6 = Math.floor(Math.random()*50 + 1)
+        var image7 = document.getElementById('card6');
+        image7.src = deckOfCards[card6].face
+        
+
+        /* document.querySelector('#card6').innerText=(deckOfCards[card6].face) */
         document.querySelector('#score').innerText = ( total+=deckOfCardsCards[card6].numValue )
     } if (total > 21){
         document.querySelector('#score').innerText = ('Bust!')
-          /* Turn off the button 'HitMe' and 'Stay' if busted. Also turn on 
-          pop up "Busted"*/
+          //// Turn off the button 'HitMe' and 'Stay' if busted. Also turn on pop up "Busted"///
         hitMeButton.disabled=true
         stayButton.disabled = true
         popupBust.classList.toggle("hidden");
@@ -235,9 +247,11 @@ document.querySelector('#buttonTwo').addEventListener('click', stay)
     var  image8 = document.getElementById('card8');
     image8.src = deckOfCards[dealerCardTwo].face
 
+    const dealersHand = (deckOfCards[dealerCardOne].numValue + deckOfCards[dealerCardTwo].numValue);
+
 
    /*  document.querySelector('#card8').innerText = ( deckOfCards[dealerCardTwo] )
-    const dealersHand = (deckOfCards[dealerCardOne].numValue + deckOfCards[dealerCardTwo].numValue);
+    
  */
         
     if (dealersHand < 21 && dealersHand > total){

@@ -232,10 +232,14 @@ document.querySelector('#buttonTwo').addEventListener('click', stay)
 
   function stay(){
     const dealerCardTwo = Math.floor(Math.random()* 52 + 1);
-    document.querySelector('#card8').innerText = ( deckOfCards[dealerCardTwo] )
-    const dealersHand = (deckOfCards[dealerCardOne].numValue + deckOfCards[dealerCardTwo].numValue);
+    var  image8 = document.getElementById('card8');
+    image8.src = deckOfCards[dealerCardTwo].face
 
-    
+
+   /*  document.querySelector('#card8').innerText = ( deckOfCards[dealerCardTwo] )
+    const dealersHand = (deckOfCards[dealerCardOne].numValue + deckOfCards[dealerCardTwo].numValue);
+ */
+        
     if (dealersHand < 21 && dealersHand > total){
       document.querySelector('#score').innerText = (' Dealer Wins!')
     }else if(dealersHand > 21) {

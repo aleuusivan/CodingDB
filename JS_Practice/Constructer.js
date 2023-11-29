@@ -3,7 +3,7 @@
 function Cards(face, numValue){
     this.face = face
     this.numValue = numValue
-    this.ace = function(){alert ('it's an ace)}
+    this.ace = function(){alert ('its an ace')}
 
 }
 

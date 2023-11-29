@@ -55,3 +55,45 @@ let EightOfDiamonds = new Cards("img=", 8)
 let NineOfDiamonds = new Cards("img=", 9)
 let TenOfDiamonds = new Cards("img=", 10)
 
+const deckOfCards = [
+    
+AceOfHearts
+TwoOfHearts 
+ThreeOfHearts
+FourOfHearts 
+FiveOfHearts 
+SixOfHearts 
+SevenOfHearts 
+EightOfHearts 
+NineOfHearts 
+TenOfHearts 
+AceOfSpades 
+TwoOfSpades 
+ThreeOfSpades
+FourOfSpades 
+FiveOfSpades
+SixOfSpades
+SevenOfSpades
+EighfSpades 
+NineOfSpades 
+TenOfSpades0
+AceOfClubs 
+TwoOfClubs 
+ThreeOfClubs
+FourOfClubs 
+FiveOfClubs 
+SixOfClubs 
+SevenOfClubs 
+EightOfClubs
+NineOfClubs 
+TenOfClubs 
+TwoOfDiamonds
+ThreeOfDiamonds 
+FourOfDiamonds
+FiveOfDiamonds 
+SixOfDiamonds 
+SevenOfDiamonds 
+EightOfDiamonds 
+NineOfDiamonds 
+TenOfDiamonds
+]

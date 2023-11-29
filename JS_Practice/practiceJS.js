@@ -1,4 +1,118 @@
    
+
+////////Deck of Cards///////////////////
+
+
+
+function Cards(face, numValue){
+  this.face = face
+  this.numValue = numValue
+  
+
+}
+
+
+//////////Hearts -10-
+let AceOfHearts = new Cards("<img id='Card' src=img/Cards/11.png >", 11)
+let TwoOfHearts = new Cards("<imgvid='Card' src= img/Cards/2.png>", 2)
+let ThreeOfHearts = new Cards("<img id='Card' src= img/Cards/3.png>", 3)
+let FourOfHearts = new Cards("<img id='Card' src= img/Cards/4.png>", 4)
+let FiveOfHearts = new Cards("<img id='Card' src= img/Cards/5.png>", 5)
+let SixOfHearts = new Cards("<img id='Card' src= img/Cards/6.png>", 6)
+let SevenOfHearts = new Cards("<img id='Card' src= img/Cards/7.png>=", 7)
+let EightOfHearts = new Cards("<img id='Card' src= img/Cards/8.png>", 8)
+let NineOfHearts = new Cards("<img id='Card' src= img/Cards/9.png>", 9)
+let TenOfHearts = new Cards("<img id='Card' src= img/Cards/10.png>", 10)
+
+//////////Spades -10-
+let AceOfSpades = new Cards("<img id='Card' src=img/Cards/11.png >", 11)
+let TwoOfSpades = new Cards("<img id='Card' src=img/Cards/2.png >", 2)
+let ThreeOfSpades = new Cards("<img id='Card' src=img/Cards/3.png >", 3)
+let FourOfSpades = new Cards("<img id='Card' src=img/Cards/4.png >", 4)
+let FiveOfSpades = new Cards("<img id='Card' src=img/Cards/5.png >", 5)
+let SixOfSpades = new Cards("<img id='Card' src=img/Cards/6.png >", 6)
+let SevenOfSpades = new Cards("<img id='Card' src=img/Cards/7.png >", 7)
+let EightOfSpades = new Cards("<img id='Card' src=img/Cards/8.png >", 8)
+let NineOfSpades = new Cards("<img id='Card' src=img/Cards/9.png >", 9)
+let TenOfSpades = new Cards("<img id='Card' src=img/Cards/10.png >", 10)
+
+
+//////////Clubs -10-
+let AceOfClubs = new Cards("img=", 11)
+let TwoOfClubs = new Cards("img=", 2)
+let ThreeOfClubs = new Cards("img=", 3)
+let FourOfClubs = new Cards("img=", 4)
+let FiveOfClubs = new Cards("img=", 5)
+let SixOfClubs = new Cards("img=", 6)
+let SevenOfClubs = new Cards("img=", 7)
+let EightOfClubs = new Cards("img=", 8)
+let NineOfClubs = new Cards("img=", 9)
+let TenOfClubs = new Cards("img=", 10)
+
+//////////Diamonds -10-
+let AceOfDiamonds = new Cards("<img id='Card' src=img/Cards/11.png >", 11)
+let TwoOfDiamonds = new Cards("<img id='Card' src=img/Cards/2.png >", 2)
+llet ThreeOfDiamonds = new Cards("<img id='Card' src=img/Cards/3.png >", 3)
+llet FourOfDiamonds = new Cards("<img id='Card' src=img/Cards/4.png >", 4)
+llet FiveOfDiamonds = new Cards("<img id='Card' src=img/Cards/5.png >", 5)
+llet SixOfDiamonds = new Cards("<img id='Card' src=img/Cards/6.png >", 6)
+llet SevenOfDiamonds = new Cards("<img id='Card' src=img/Cards/7.png >", 7)
+llet EightOfDiamonds = new Cards("<img id='Card' src=img/Cards/8.png >", 8)
+llet NineOfDiamonds = new Cards("<img id='Card' src=img/Cards/9.png >", 9)
+llet TenOfDiamonds = new Cards("<img id='Card' src=img/Cards/10.png >", 10)
+
+const deckOfCards = [
+  
+AceOfHearts,
+TwoOfHearts,
+ThreeOfHearts,
+FourOfHearts, 
+FiveOfHearts, 
+SixOfHearts, 
+SevenOfHearts, 
+EightOfHearts, 
+NineOfHearts, 
+TenOfHearts, 
+AceOfSpades, 
+TwoOfSpades, 
+ThreeOfSpades,
+FourOfSpades, 
+FiveOfSpades,
+SixOfSpades,
+SevenOfSpades,
+EightOfSpades, 
+NineOfSpades, 
+TenOfSpades,
+AceOfClubs, 
+TwoOfClubs, 
+ThreeOfClubs,
+FourOfClubs, 
+FiveOfClubs, 
+SixOfClubs, 
+SevenOfClubs, 
+EightOfClubs,
+NineOfClubs, 
+TenOfClubs, 
+TwoOfDiamonds,
+ThreeOfDiamonds, 
+FourOfDiamonds,
+FiveOfDiamonds, 
+SixOfDiamonds, 
+SevenOfDiamonds, 
+EightOfDiamonds, 
+NineOfDiamonds, 
+TenOfDiamonds,
+]
+
+
+
+
+
+
+ //////////////////////////////////////////////////////////////////////////////////////////////  
+ //////////////////////////////////////////////////////////////////////////////////////////////  
+ //////////////////////////////////////////////////////////////////////////////////////////////  
+ //////////////////////////////////////////////////////////////////////////////////////////////  
    const startButton = document.querySelector('#buttonStart')
    const hitMeButton = document.querySelector('#buttonOne')
    const stayButton = document.querySelector('#buttonTwo')
@@ -30,16 +144,16 @@
         // Dealer's Cards://
 
 
-        dealerCardOne = Math.floor(Math.random()*10 + 1)
-        document.querySelector('#card7').innerText = ( dealerCardOne )
+        dealerCardOne = Math.floor(Math.random()*50 + 1)
+        document.querySelector('#card7').innerText = ( Cards[dealerCardOne].face )
 
-            const card1 = Math.floor(Math.random()*10 + 1)
-            document.querySelector ('#card1').innerText =(card1)
-            document.querySelector('#score').innerText = ( total+=card1 )
+            const card1 = Math.floor(Math.random()*50 + 1)
+            document.querySelector ('#card1').innerText =(Cards[card1].face)
+            document.querySelector('#score').innerText = ( total+=Cards[card1].numValue )
 
-            const card2 = Math.floor(Math.random()*10)
+            const card2 = Math.floor(Math.random()*50 + 1 )
             document.querySelector ('#card2').innerText =(card2)
-            document.querySelector('#score').innerText = ( total+=card2 )
+            document.querySelector('#score').innerText = ( total+=Cards[card2].numValue )
             startButton.classList.add('hidden')
         }
         
@@ -64,26 +178,26 @@ function hitMe() {
     
     click++;
     if(click == 1){
-       const card3 = Math.floor(Math.random()*10 + 1)
-        document.querySelector('#card3').innerText=(card3)
-        document.querySelector('#score').innerText = ( total+=card3 )
+       const card3 = Math.floor(Math.random()*50 + 1)
+        document.querySelector('#card3').innerText=(Cards[card3].face)
+        document.querySelector('#score').innerText = ( total+=Cards[card3].numValue )
         
     }
     else if(click == 2){
-        const card4 = Math.floor(Math.random()*10 + 1)
-        document.querySelector('#card4').innerText=(card4)
-        document.querySelector('#score').innerText = ( total+=card4 )
+        const card4 = Math.floor(Math.random()*50 + 1)
+        document.querySelector('#card4').innerText=(Cards[card4].face)
+        document.querySelector('#score').innerText = ( total+=Cards[card4].numValue )
         
 
     }else if (click == 3){
-        const card5 = Math.floor(Math.random()*10 + 1)
-        document.querySelector('#card5').innerText=(card5)
-        document.querySelector('#score').innerText = ( total+=card5 )
+        const card5 = Math.floor(Math.random()*50 + 1)
+        document.querySelector('#card5').innerText=(Cards[card5].face)
+        document.querySelector('#score').innerText = ( total+=Cards[card5].numValue )
     
     }else if (click == 4){
-        const card6 = Math.floor(Math.random()*10 + 1)
-        document.querySelector('#card6').innerText=(card6)
-        document.querySelector('#score').innerText = ( total+=card6 )
+        const card6 = Math.floor(Math.random()*50 + 1)
+        document.querySelector('#card6').innerText=(Cards[card6].face)
+        document.querySelector('#score').innerText = ( total+=Cards[card6].numValue )
     } if (total > 21){
         document.querySelector('#score').innerText = ('Bust!')
           /* Turn off the button 'HitMe' and 'Stay' if busted. Also turn on 

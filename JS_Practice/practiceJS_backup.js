@@ -130,7 +130,7 @@ function Cards(face, numValue){
        let click = 0
        
        hitMeButton.disabled=true
-       stayButton.disabled = true
+       stayButton.disabled =true 
    
          function startGame() {
            let total = 0

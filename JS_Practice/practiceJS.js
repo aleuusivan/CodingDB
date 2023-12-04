@@ -3,6 +3,7 @@ var yourTotal = 0
 var deck
 var count = 0
 var bet = 0
+var click = 0
 
 const startButton = document.querySelector('#buttonStart')
 const hitMeButton = document.querySelector('#buttonOne')
@@ -146,19 +147,17 @@ function Cards(face, value){
   JackOfDiamnonds,
   ]
 
-  console.log(deckOfCards)
+  
 
 
 document.querySelector('#buttonStart').addEventListener('click', startGame)
 document.querySelector('#buttonOne').addEventListener('click', hitMe)
+document.querySelector('#buttonTwo').addEventListener('click', stay)
 
 
 
 function startGame() {
   
-  count++;
-  if(count== 1){
-
   hitMeButton.disabled=false
   stayButton.disabled = false
   startButton.style.display = 'none';
@@ -176,49 +175,137 @@ function startGame() {
   //////Your first two cards//////////
 
   //////////////  Your Card 1   ////////////////////
-      let card1 = Math.floor(Math.random()*deckOfCards.length + 1)
-      var  image2 = document.getElementById('card1');      
-      image2.src = deckOfCards[card1].face
+    let card1 = Math.floor(Math.random()*deckOfCards.length + 1)
+    var  image2 = document.getElementById('card1');      
+    image2.src = deckOfCards[card1].face
 
 
       //////////////  Your Card 2  ////////////////////
-      let card2 = Math.floor(Math.random()*deckOfCards.length + 1 )
-      var  image3 = document.getElementById('card2');
-      image3.src = deckOfCards[card2].face
-      let yourTotal = (deckOfCards[card1].value + deckOfCards[card2].value)
+    let card2 = Math.floor(Math.random()*deckOfCards.length + 1 )
+    var  image3 = document.getElementById('card2');
+    image3.src = deckOfCards[card2].face
+    yourTotal = (deckOfCards[card1].value + deckOfCards[card2].value)      
+    document.querySelector('#score').innerText = ( yourTotal )
+      
+     
+     /////Hide the start button after being pressed/////
+    startButton.classList.add('hidden')
+  return yourTotal
 
-      
-      document.querySelector('#score').innerText = ( yourTotal )
-      
-      /* document.querySelector ('#card2').innerText =(deckOfCards[card2].face) */
-     
-     
-     /*  document.querySelector('#score').innerText = ( yourTotal+=deckOfCards[card2].value ) */
-      /////Hide the start button after being pressed/////
-      startButton.classList.add('hidden')
   }
-}
+
 
 function hitMe(){
-
-  ///////////////////// Dealer gets second Card////////////////
-
-  let dealerCardTwo = Math.floor(Math.random()*deckOfCards.length + 1)
-  var  image4 = document.getElementById('card8');
-      image4.src = deckOfCards[card2].face
-      let dealerTotal = deckOfCards[dealerCardOne] + deckOfCards[dealerCardTwo]
-
-
-
-      ////////////// Your Card 3 /////////////////////////////////
-      let card3 = Math.floor(Math.random()*deckOfCards.length + 1 )
-      var  image5 = document.getElementById('card3');
-      image5.src = deckOfCards[card3].face
-      let yourTotal = (deckOfCards[card3].value + deckOfCards[card2].value)
-
-      console.log(dealerTotal)
+/////////////////////////////// Your Card 3 ///////////////////////////////// 
   
+  count++
+
+  if(count === 1){
+    let card3 = Math.floor(Math.random()*deckOfCards.length + 1 )
+    var  image5 = document.getElementById('card3');
+    image5.src = deckOfCards[card3].face
+    yourTotal = yourTotal + deckOfCards[card3].value
+    document.querySelector('#score').innerText = ( yourTotal)
+
+  }
+  if(count === 2){
+    let card4 = Math.floor(Math.random()*deckOfCards.length + 1)
+    var image6 = document.getElementById('card4')
+    image6.src = deckOfCards[card4].face     
+    yourTotal  =  yourTotal + deckOfCards[card4].value
+    document.querySelector('#score').innerText = ( yourTotal)
+  }
+  if(count === 3){
+    let card5 = Math.floor(Math.random()*deckOfCards.length + 1)
+    var image7 = document.getElementById('card5')
+    image7.src =  deckOfCards[card5].face 
+    yourTotal  =  yourTotal + deckOfCards[card5].value
+    document.querySelector('#score').innerText = ( yourTotal)
+  }
+  if(count === 4){
+    let card6 = Math.floor(Math.random()*deckOfCards.length + 1)
+    var image8 = document.getElementById('card5')
+    image8.src =  deckOfCards[card6].face 
+    yourTotal  =  yourTotal + deckOfCards[card6].value
+    document.querySelector('#score').innerText = ( yourTotal)
+  }
+  if(yourTotal  > 21){
+    document.querySelector('#score').innerText = ('Bust!')
+    hitMeButton.disabled=true
+    stayButton.disabled = true
+    popupBust.classList.toggle("hidden");
+
+  }else if(yourTotal === 21){
+    document.querySelector('#score').innerText = ('BlackJack you Win!')
+    hitMeButton.disabled=true
+    stayButton.disabled = true
+    popupWin.classList.toggle("hidden");
+    
+  }else if(dealerTotal > 21 ){
+    document.querySelector('#score').innerText = ('Dealer Busts You Win!')
+    hitMeButton.disabled=true
+    stayButton.disabled = true
+    popupWin.classList.toggle("hidden")
+
+  }else if(21-yourTotal > 21-dealerTotal){document.querySelector('#score').innerText = ('Dealer Wins!')
+  hitMeButton.disabled=true
+  stayButton.disabled = true
+  popupBust.classList.toggle("hidden")
+ }
 
 
 }
+
+//////////////          Player hits Stay              /////////////////////////
+function stay(){
+  click++
+  ////////  Dealer's Second Card: ///////////////////
+  if (click === 1){
+  let dealerCardTwo = Math.floor(Math.random()*deckOfCards.length + 1)
+  var  image9 = document.getElementById('card8')
+  image9.src = deckOfCards[dealerCardTwo].face
+  dealerTotal = dealerTotal+deckOfCards[dealerCardTwo].value
+  }
+   if(dealerTotal < 17){
+    let dealerCardThree = Math.floor(Math.random()*deckOfCards.length + 1)
+    var  image10 = document.getElementById('card9')
+    image10.src = deckOfCards[dealerCardThree].face
+    dealerTotal = dealerTotal+deckOfCards[dealerCardThree].value
+    }if(dealerTotal > 21 ){
+      document.querySelector('#score').innerText = ('Dealer Busts You Win!')
+      hitMeButton.disabled=true
+      stayButton.disabled = true
+      popupWin.classList.toggle("hidden")
+
+}else if(dealerTotal === yourTotal){
+    document.querySelector('#score').innerText = ('Push P!')
+    hitMeButton.disabled=true
+    stayButton.disabled = true
+    popupBust.classList.toggle("hidden")
+
+}else if(dealerTotal === 21){
+      document.querySelector('#score').innerText = ('Dealer WinS!')
+      hitMeButton.disabled=true
+      stayButton.disabled = true
+      popupBust.classList.toggle("hidden")
+
+}else if( dealerTotal <  yourTotal){
+      document.querySelector('#score').innerText = ('You Win!')
+      hitMeButton.disabled=true
+      stayButton.disabled = true
+      popupWin.classList.toggle("hidden")
+}
+else if(dealerTotal > yourTotal){
+      document.querySelector('#score').innerText = ('Dealer Wins!')
+      hitMeButton.disabled=true
+      stayButton.disabled = true
+      popupBust.classList.toggle("hidden")
+
+
+}else if(21-yourTotal > 21-dealerTotal){document.querySelector('#score').innerText = ('Dealer Wins!')
+    hitMeButton.disabled=true
+    stayButton.disabled = true
+    popupBust.classList.toggle("hidden")
+   }
+  }
 

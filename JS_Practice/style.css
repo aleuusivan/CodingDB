@@ -137,6 +137,40 @@ h2{
     padding: 30 30px 30px
 }
 
+#popupDraw{ 
+
+   width: 10%;
+   height: 10%;
+   position: absolute;
+   top: 50%;
+   left: 55%;
+   transform-origin: top center;    
+   animation: popupWin .2s ease forwards
+    
+}
+@keyframes popupDraw{
+   0%{opacity: 0; scale: .1}
+   50%{opacity: .9;}
+   100%{transform: rotate(25deg); scale: .6; opacity: .8;}
+}
+
+#popupLose{ 
+
+   width: 10%;
+   height: 10%;
+   position: absolute;
+   top: 50%;
+   left: 55%;
+   transform-origin: top center;    
+   animation: popupWin .2s ease forwards
+    
+}
+@keyframes popupLose{
+   0%{opacity: 0; scale: .1}
+   50%{opacity: .9;}
+   100%{transform: rotate(25deg); scale: .6; opacity: .8;}
+}
+
 #popupWin{ 
 
    width: 10%;
